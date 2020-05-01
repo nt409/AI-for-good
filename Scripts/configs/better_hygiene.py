@@ -3,7 +3,6 @@ import numpy as np
 
 # camp
 camp = 'Moria'
-#need to put the population frame in use here too for testing purposes
 population_frame, population = preparePopulationFrame(camp)
 
 # from github issue
@@ -14,24 +13,23 @@ control_dict = dict( # contains our 6 different control options. Can choose any 
     # 1
     # if True, reduces transmission rate by params.better_hygiene
     better_hygiene = dict(value = params.better_hygiene,
-                        timing = [10,200]),
+                        timing = [0,200]),
 
-    ICU_capacity = dict(value = 20/population),
+    ICU_capacity = dict(value = 6/population),
                         
     # 4
     # move symptomatic cases off site
     remove_symptomatic = dict(rate = 10/population,  # people per day
-                            timing = [10,200]),
+                            timing = [0,0]),
 
     # 5
     # partially separate low and high risk
     # (for now) assumed that if do this, do for entire course of epidemic
-    shielding = dict(used= True), 
+    shielding = dict(used= False), 
 
     # 6
     # move uninfected high risk people off site
     remove_high_risk = dict(rate = 20/population,  # people per day
-                            n_categories_removed = 2, # remove oldest N categories
-                            timing = [0,60])
+                            timing = [0,0])
 
 )
