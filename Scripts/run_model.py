@@ -15,7 +15,7 @@ cwd = os.getcwd()
 
 ##----------------------------------------------------------------
 # load a saved solution?
-load = True
+load = False
 # save generated solution? Only generates new if not loading old
 # saves as a python pickle object
 save = True
